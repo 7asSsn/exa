@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- favicon -->
+      <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawsom -->
+    <script
+      src="https://kit.fontawesome.com/8dab7cdf16.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Bookmark</title>
+    <link rel="stylesheet" href="../CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="../CSS/style.css">
+  </head>
+  <body>
+    <main class="interface py-5 position-relative">
+      <section class="bookmark py-5">
+        <div
+          class="container d-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="title py-2">
+            <h1>Bookmarker</h1>
+          </div>
+          <div class="book-shape bookmark-body w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+            <h2>
+              <i class="fa-solid fa-bookmark"></i>
+              Bookmark your favorite sites
+              <i class="fa-solid fa-bookmark"></i>
+            </h2>
+
+            <div class="mb-3 site-name w-100 d-flex justify-content-center flex-column-reverse">
+            <input
+            type="text"
+            id="InputName"
+            class="form-control"
+            placeholder="Bookmark Name"
+            oninput="validateData(/^\w{3,20}$/, this.value, this)"/>
+            
+              <label for="InputName" class="form-label fw-semibold">
+                <i class="fa-solid fa-book-bookmark p-2"></i>
+                Site Name</label>
+            </div>
+   
+            <div class="mb-3 site-URL w-100 d-flex  justify-content-center flex-column-reverse"
+            >
+              <input
+                type="text"
+                id="InputURL"
+                class="form-control"
+                placeholder="Website URL" 
+                oninput="validateData(/^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/[^\s]*)?$/, this.value, this)"
+              />
+              <label for="InputURL" class="form-label fw-semibold pe-2">
+                <i class="fa-solid fa-link"></i></i>Site URL</label
+              >
+            </div>
+            <!-- <button onclick="addData()" type="submit" class="btn btn-submit px-5">Submit</button> -->
+            <button onclick="addData()" class="btn btn-submit px-5">Submit</button>
+            <!-- <button onclick = "addProduct()" id="addBtn" class="btn btn-primary" type="submit">Add Product</button> -->
+          </div>
+        </div>
+        <div class="container">
+          <table class="table table-striped mt-4 text-center bg-light">
+            <thead>
+              <td>Index</td>
+              <td>Websit Name</td>
+              <td>Visit</td>
+              <td>Delete</td>
+            </thead>
+            <tbody id="tableContent">
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="../JS/main.js"></script>
+  </body>
+</html>
